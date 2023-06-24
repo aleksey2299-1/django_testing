@@ -20,7 +20,7 @@ def author_client(author, client):
 def new():
     new = News.objects.create(
         title='Текст заголовка',
-        text='Текст заметки',
+        text='Текст новости',
         date=datetime.utcnow(),
     )
     return new
@@ -29,7 +29,7 @@ def new():
 @pytest.fixture
 def comment(author, new):
     comment = Comment.objects.create(
-        text='Текст заметки',
+        text='Текст комментария',
         created=datetime.utcnow(),
         author=author,
         news=new,
